@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log in – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<main class="page">
+
+  <aside class="brand">
+    <a class="brand-logo" href="index.html" aria-label="ByteSentry home">
+      <img src="Bytesentry.png" width="1254" height="1254" alt="ByteSentry – Your data. Always there.">
+    </a>
+    <div class="brand-copy">
+      <h1><span class="l1">Welcome back.</span><span class="l2">Your data is waiting.</span></h1>
+      <p class="lede">Log in to buy data, check your orders and manage auto top-up.</p>
+    </div>
+  </aside>
+
+  <section class="panel">
+    <form class="form" id="loginForm" novalidate>
+      <h2>Log in</h2>
+      <p class="sub">Enter your details to continue.</p>
+
+      <p class="alert" id="alert" role="alert" hidden></p>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" name="email" class="input" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailErr">
+        <p class="err" id="emailErr"></p>
+      </div>
+
+      <div class="field">
+        <div class="label-row">
+          <label for="password">Password</label>
+          <a href="#forgot" class="link">Forgot password?</a>
+        </div>
+        <div class="pw">
+          <input id="password" name="password" class="input" type="password" autocomplete="current-password" placeholder="Your password" required aria-describedby="pwErr">
+          <button type="button" class="eye" id="eye" aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <p class="err" id="pwErr"></p>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="remember" checked>
+        <span>Keep me logged in on this device</span>
+      </label>
+
+      <button class="btn" id="submit" type="submit"><span class="btn-text">Log in</span><i class="spin" aria-hidden="true"></i></button>
+
+      <p class="switch">New to ByteSentry? <a class="link" href="index.html#signup">Create an account</a></p>
+    </form>
+
+    <p class="legal"><a href="index.html">Back to home</a><span>© 2026 ByteSentry</span></p>
+  </section>
+
+</main>
+<script type="module" src="login.js"></script>
+</body>
+</html>

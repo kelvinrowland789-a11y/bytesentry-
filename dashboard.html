@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard | ByteSentry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side">
+    <img class="logo" src="Bytesentry.png" alt="ByteSentry">
+    <nav class="nav">
+      <a href="#home" class="on">Home</a>
+      <a href="#buy">Buy</a>
+      <a href="#services">Services</a>
+      <a href="#history">History</a>
+      <a href="#help">Help</a>
+    </nav>
+    <a class="site-btn" href="bytesentry.html">Visit ByteSentry</a>
+  </aside>
+
+  <main class="main">
+    <header class="top" id="home">
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      <div class="hello">
+        <h1 id="greet">Welcome back</h1>
+        <p>Your data. Always there.</p>
+      </div>
+      <a class="site-btn slim" href="bytesentry.html">Visit ByteSentry</a>
+    </header>
+
+    <section class="hero">
+      <div class="wallet">
+        <span class="muted">Wallet balance</span>
+        <strong id="balance">₦0.00</strong>
+        <div class="wallet-actions">
+          <button class="btn solid" id="fundBtn">Fund wallet</button>
+          <button class="btn ghost" id="copyAcct">Copy account number</button>
+        </div>
+      </div>
+      <div class="stat"><span class="muted">Spent this month</span><strong id="spent">₦0</strong></div>
+      <div class="stat"><span class="muted">Orders completed</span><strong id="orders">0</strong></div>
+    </section>
+
+    <section class="panel" id="buy">
+      <div class="panel-head">
+        <h2>Buy instantly</h2>
+        <div class="tabs" id="tabs">
+          <button class="tab on" data-type="data">Data</button>
+          <button class="tab" data-type="airtime">Airtime</button>
+        </div>
+      </div>
+      <div class="nets" id="nets"></div>
+      <div class="plans" id="plans"></div>
+    </section>
+
+    <section class="panel steps">
+      <h2>How to buy</h2>
+      <div class="steps-row">
+        <div class="step"><b>1</b><h3>Pick a network</h3><p>Choose MTN, Airtel, Glo or 9mobile above.</p></div>
+        <div class="step"><b>2</b><h3>Choose a plan</h3><p>Tap the plan or amount you want. Prices are final.</p></div>
+        <div class="step"><b>3</b><h3>Confirm with your PIN</h3><p>Enter the phone number and your 4-digit PIN. Delivery takes seconds.</p></div>
+      </div>
+    </section>
+
+    <section class="panel" id="services">
+      <h2>More services</h2>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section class="panel" id="history">
+      <div class="panel-head"><h2>Recent transactions</h2></div>
+      <div class="txns" id="txns"></div>
+    </section>
+
+    <section class="panel help" id="help">
+      <div>
+        <h2>Something not right?</h2>
+        <p class="muted">Send us your reference number and we will check it right away.</p>
+      </div>
+      <a class="btn solid" href="https://wa.me/2340000000000" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </section>
+  </main>
+</div>
+
+<div class="sheet-bg" id="sheetBg">
+  <form class="sheet" id="sheet" autocomplete="off">
+    <h3 id="sheetTitle">Confirm purchase</h3>
+    <p class="muted" id="sheetSub"></p>
+    <label>Phone number<input id="phone" inputmode="numeric" maxlength="11" placeholder="08012345678" required></label>
+    <label>Transaction PIN<input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••" required></label>
+    <div class="sheet-actions">
+      <button type="button" class="btn ghost" id="cancel">Cancel</button>
+      <button type="submit" class="btn solid" id="pay">Buy now</button>
+    </div>
+  </form>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="dashboard.js"></script>
+</body>
+</html>
