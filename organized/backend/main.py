@@ -40,7 +40,10 @@ app = FastAPI(title="ByteSentry API")
 # Same idea as before: allow Codespaces + localhost, with cookies.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o for o in [os.getenv("FRONTEND_URL", "").rstrip("/")] if o],
+    allow_origins=[
+        "https://bytesentry.netlify.app",
+        *[o for o in [os.getenv("FRONTEND_URL", "").rstrip("/")] if o],
+    ],
     allow_origin_regex=r"https://.*\.app\.github\.dev|http://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )

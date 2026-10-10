@@ -13,7 +13,9 @@
 | Name | What it is |
 |---|---|
 | Y3_BASE_URL | defaults to https://y3data.com/api/v1 |
-| FRONTEND_URL | public origin allowed to make credentialed browser requests to the API |
+| FRONTEND_URL | additional public origin allowed to make credentialed browser requests to the API; `https://bytesentry.netlify.app` is allowed by default |
+
+For the deployed frontend, set `FRONTEND_URL=https://bytesentry.netlify.app` in the backend deployment environment. Localhost and GitHub Codespaces origins remain allowed for testing.
 
 The Paystack webhook URL is configured in `url.py` as `webhook_url`; set this exact public URL in the
 Paystack dashboard. The matching route path is `webhook_path`.
