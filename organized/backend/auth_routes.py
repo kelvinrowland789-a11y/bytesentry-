@@ -82,7 +82,13 @@ def login(b: LoginIn, request: Request, db: Session = Depends(get_db)):
 
 
 @router.post("/logout")
-def logout():
+def logout(request: Request):
     res = JSONResponse({"message": "Logged out."})
-    res.delete_cookie(COOKIE_NAME, path="/")
+    https = request.headers.get("x-forwarded-proto", request.url.scheme) == "https"
+    res.delete_cookie(
+        COOKIE_NAME,
+        path="/",
+        secure=https,
+        samesite="none" if https else "lax",
+    )
     return res
