@@ -1,7 +1,7 @@
 fastapi
 uvicorn[standard]
 sqlalchemy>=2.0
-psycopg2-binary   # Postgres driver. Swap for pymysql etc. if you use another database
+psycopg[binary]
 requests
 argon2-cffi
 PyJWT
