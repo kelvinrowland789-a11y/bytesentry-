@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ByteSentry – More data for less. Kept for 30 days.</title>
+<meta name="description" content="MTN and Airtel data for less, valid for 30 days, bought online in under a minute. 5GB for ₦1,600.">
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="#top" aria-label="ByteSentry home">
+      <img src="Bytesentry.png" width="1254" height="1254" alt="ByteSentry – Your data. Always there.">
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#compare">Savings</a><a href="#plans">Plans</a><a href="#autotopup">Auto top-up</a><a href="how-it-works.html">How it works</a>
+    </nav>
+    <a class="btn btn-primary" href="login.html">Login</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="nets"><i class="net mtn"></i>MTN <i class="net airtel"></i>Airtel <span>Nigeria</span></p>
+        <h1><span class="l1">More data for less.</span><span class="l2">Kept for 30 days.</span></h1>
+        <p class="lede">Pay <b>₦3,000</b> for 10GB instead of the usual ≈₦4,500. Buy online in under a minute, with no USSD codes.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="signup.html">Create free account</a>
+          <a class="btn btn-line btn-lg" href="#compare">See the savings</a>
+        </div>
+      </div>
+
+      <article class="order" aria-label="Example order">
+        <header class="order-top">
+          <img src="Bytesentry.png" width="1254" height="1254" alt="ByteSentry logo">
+          <span class="pill">trending plan</span>
+        </header>
+        <p class="order-size">5GB</p>
+        <p class="order-meta">MTN · valid 30 days</p>
+        <dl class="order-math">
+          <div><dt>Usual price</dt><dd><s>≈ ₦3,000</s></dd></div>
+          <div class="pay"><dt>You pay</dt><dd>₦1600</dd></div>
+        </dl>
+        <p class="save">You keep ≈ ₦1,400</p>
+        <ol class="prog">
+          <li style="--d:.5s">1gb auto topup</li>
+          <li style="--d:1.2s">30days+ validity</li>
+          <li style="--d:1.9s">cheaper subscription</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="sec problem">
+    <div class="wrap prob-in">
+      <h2>Buying data shouldn't cost extra or take ten taps</h2>
+      <ul class="pains">
+        <li><b>Prices creep up.</b><span>10GB can run to ₦4,500 through the usual channels.</span></li>
+        <li><b>USSD is slow.</b><span>Long menus, wrong digits, start again.</span></li>
+        <li><b>Data runs out quietly.</b><span>And you notice at the worst possible time.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMPARISON (light section for contrast) -->
+  <section class="sec light" id="compare">
+    <div class="wrap cmp">
+      <div class="cmp-copy">
+        <h2>Same 10GB. Same 30 days. Less to pay.</h2>
+        <p class="lede">Why keep paying the usual price? On this plan, ByteSentry puts about <b>₦1,000</b> back in your pocket.</p>
+        <div class="calc">
+          <label for="months">Buy 10GB every month for <output id="monthsOut">6</output> months</label>
+          <input id="months" type="range" min="1" max="12" value="6">
+          <p>That's about <strong id="saved">₦6,000</strong> kept</p>
+        </div>
+        <p class="small">Illustrative example for a 10GB / 30-day plan. Usual prices vary by provider and channel, and savings differ by plan.</p>
+      </div>
+
+      <div class="bars" id="bars" aria-label="Price comparison: usual about 4,500 naira versus ByteSentry 3,500 naira">
+        <div class="bar-col">
+          <p class="bv">≈ ₦4,500</p>
+          <div class="bar old" style="--h:100%"></div>
+          <p class="bl">Usual purchase</p>
+        </div>
+        <div class="bar-col">
+          <p class="bv new">₦3,000</p>
+          <div class="bar neu" style="--h:77.8%"><span>Save ≈ ₦1,000</span></div>
+          <p class="bl">ByteSentry</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="sec" id="plans">
+    <div class="wrap">
+      <div class="head">
+        <h2>Clear plans. Clear prices.</h2>
+        <div class="seg" role="radiogroup" aria-label="Network">
+          <label><input type="radio" name="net" value="mtn" checked><span><i class="net mtn"></i>MTN</span></label>
+          <label><input type="radio" name="net" value="airtel"><span><i class="net airtel"></i>Airtel</span></label>
+        </div>
+      </div>
+      <ul class="plist" id="planList"></ul>
+      <p class="small">Sample prices. Data, validity and network are shown before you pay. No hidden charges.</p>
+    </div>
+  </section>
+
+  <!-- AUTO TOP-UP -->
+  <section class="sec auto" id="autotopup">
+    <div class="wrap auto-in">
+      <div>
+        <h2>Never get caught without data</h2>
+        <p class="lede">Set up auto top-up and ByteSentry buys your next bundle when you run low, so you don't have to remember.</p>
+        <ul class="ticks">
+          <li>You pick the plan, the number and the trigger.</li>
+          <li>Nothing happens until you set it up and approve it.</li>
+          <li>Pause or turn it off whenever you like.</li>
+        </ul>
+        <p class="small">Available where supported by the network and plan.</p>
+      </div>
+
+      <div class="rule on" id="rule">
+        <div class="rule-top">
+          <p><b>Auto top-up</b><span id="ruleState">On · example</span></p>
+          <button class="switch" id="sw" role="switch" aria-checked="true" aria-label="Auto top-up example"></button>
+        </div>
+        <div class="meter" aria-hidden="true">
+          <div class="meter-row"><span>Data left</span><span>Top up below 1GB</span></div>
+          <div class="track"><i class="fill"></i><i class="mark"></i></div>
+        </div>
+        <dl>
+          <div><dt>Buys</dt><dd>10GB · 30 days</dd></div>
+          <div><dt>For</dt><dd>0803 000 0000</dd></div>
+          <div><dt>Paid from</dt><dd>Your wallet</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <h2>From empty to online in four steps</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><h3>Choose your network</h3><p>MTN or Airtel.</p></li>
+        <li><span class="n">2</span><h3>Choose your data</h3><p>Size, validity and price in plain sight.</p></li>
+        <li><span class="n">3</span><h3>Pay online</h3><p>Fast, simple and secure.</p></li>
+        <li><span class="n">4</span><h3>Get your data</h3><p>Delivered digitally, usually within a minute.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="sec trust">
+    <div class="wrap">
+      <h2>You always know what happened</h2>
+      <dl class="facts">
+        <div><dt>Clear pricing</dt><dd>Price, data, validity and network up front. No surprises at checkout.</dd></div>
+        <div><dt>Confirmed transactions</dt><dd>Every purchase gets a status, so you know when your data has landed.</dd></div>
+        <div><dt>Purchase history</dt><dd>Find any past order in your account, any time.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="signup">
+    <div class="wrap cta-in">
+      <h2>Why are you still paying the usual price?</h2>
+      <p class="lede">Create your account and buy your first bundle in minutes.</p>
+      <form class="join" id="joinForm" novalidate>
+        <label class="sr" for="email">Email address</label>
+        <input id="email" class="input" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn btn-primary btn-lg" type="submit">Create free account</button>
+      </form>
+      <p class="small" id="joinMsg" role="status">Free to join.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img src="Bytesentry.png" width="1254" height="1254" alt="ByteSentry – Your data. Always there.">
+    <nav aria-label="Footer"><a href="#plans">Plans</a><a href="how-it-works.html">How it works</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="mailto:support@bytesentry.ng">support@bytesentry.ng</a></nav>
+    <p class="small">© 2026 ByteSentry</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <p><b>10GB · 30 days</b><span>₦3,000</span></p>
+  <a class="btn btn-primary" href="#signup">Get started</a>
+</div>
+
+<script type="module" src="script.js?v=session-check-4"></script>
+</body>
+</html>

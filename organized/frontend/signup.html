@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Create account – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<main class="page">
+
+  <aside class="brand">
+    <a class="brand-logo" href="index.html" aria-label="ByteSentry home">
+      <img src="Bytesentry.png" width="1254" height="1254" alt="ByteSentry – Your data. Always there.">
+    </a>
+    <div class="brand-copy">
+      <h1><span class="l1">Create your account.</span><span class="l2">Start paying less.</span></h1>
+      <ul class="ticks">
+        <li>Free to join, set up in about a minute</li>
+        <li>Clear prices and 30-day validity</li>
+        <li>Every order tracked in your history</li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="panel">
+    <form class="form" id="signupForm" novalidate>
+      <h2>Create account</h2>
+      <p class="sub">Tell us a little about you to get started.</p>
+
+      <p class="alert" id="alert" role="alert" hidden></p>
+
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" class="input" type="text" autocomplete="name" placeholder="e.g. Tunde Adeyemi" required aria-describedby="nameErr">
+        <p class="err" id="nameErr"></p>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input id="phone" class="input" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="08031234567" maxlength="11" required aria-describedby="phoneErr">
+        <p class="err" id="phoneErr"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" class="input" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailErr">
+        <p class="err" id="emailErr"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="pw">
+          <input id="password" class="input" type="password" autocomplete="new-password" placeholder="At least 8 characters" required aria-describedby="pwErr pwHint">
+          <button type="button" class="eye" id="eye" aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <div class="strength" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <p class="hint" id="pwHint">Use 8+ characters with letters and numbers.</p>
+        <p class="err" id="pwErr"></p>
+      </div>
+
+      <div class="field">
+        <div class="label-row"><label for="pin1" id="pinLabel">Transaction PIN</label><button type="button" class="link link-btn" id="pinEye" aria-pressed="false">Show</button></div>
+        <div class="pin" role="group" aria-labelledby="pinLabel" aria-describedby="pinHint pinErr">
+          <input id="pin1" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="PIN digit 1">
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="PIN digit 2">
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="PIN digit 3">
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="PIN digit 4">
+        </div>
+        <p class="hint" id="pinHint">A 4-digit PIN you'll enter to approve each purchase. Don't share it.</p>
+        <p class="err" id="pinErr"></p>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="terms">
+        <span>I agree to the <a class="link" href="terms.html">Terms</a> and <a class="link" href="privacy.html">Privacy Policy</a></span>
+      </label>
+      <p class="err" id="termsErr"></p>
+
+      <button class="btn" id="submit" type="submit"><span class="btn-text">Create account</span><i class="spin" aria-hidden="true"></i></button>
+
+      <p class="switch">Already have an account? <a class="link" href="login.html">Log in</a></p>
+    </form>
+
+    <p class="legal"><a href="index.html">Back to home</a><span>© 2026 ByteSentry</span></p>
+  </section>
+
+</main>
+<script type="module" src="signup.js"></script>
+</body>
+</html>

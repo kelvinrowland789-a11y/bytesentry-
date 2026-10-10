@@ -1,0 +1,5 @@
+Backend_url = "https://studious-tribble-vpr467w495xxfxqpr-8000.app.github.dev"
+frontend_url = "https://studious-tribble-vpr467w495xxfxqpr-5000.app.github.dev"
+dashboard_url = "https://studious-tribble-vpr467w495xxfxqpr-5000.app.github.dev/dashboard.html"
+webhook_path = "/paystack/webhook"
+webhook_url = "https://studious-tribble-vpr467w495xxfxqpr-8000.app.github.dev/paystack/webhook"

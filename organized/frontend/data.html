@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Buy Data – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=data-network-2">
+</head>
+<body data-page="data">
+<main>
+<form class="card" id="form" novalidate>
+  <div class="step"><b>1</b><h3>Network</h3></div>
+  <div id="nets"></div>
+  <p class="selected-network" id="selected-network" aria-live="polite">Selected network: MTN</p>
+  <div class="step"><b>2</b><h3>Data bundle</h3></div>
+  <label class="lab" for="bundle">Choose your data plan</label>
+  <select id="bundle" class="input"><option>Loading plans…</option></select>
+  <p class="note" id="planErr" hidden>Couldn't load plans. <button type="button" class="linkbtn" id="retry">Try again</button></p>
+  <div class="step"><b>3</b><h3>Payment amount</h3></div>
+  <div class="pay-box"><span>Amount to pay</span><strong id="amount">₦0</strong></div>
+  <div class="step"><b>4</b><h3>Recipient</h3></div>
+  <label class="lab" for="phone">Phone number</label>
+    <input id="phone" class="input" type="tel" inputmode="numeric" maxlength="11" autocomplete="tel-national" placeholder="08031234567">
+  <label class="lab gap" for="pin">Transaction PIN</label>
+    <input id="pin" class="input pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="••••">
+  <p class="err" id="err" role="alert" hidden></p>
+  <button class="btn btn-primary" id="buy" type="submit">Buy data</button>
+</form>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js?v=data-network-2"></script>
+</body>
+</html>

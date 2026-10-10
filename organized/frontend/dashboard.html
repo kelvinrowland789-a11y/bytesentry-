@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Overview – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-page="dashboard">
+<main>
+<p class="hello" id="hello">Hello</p>
+<p class="sub">Here's what's happening with your wallet today.</p>
+<section class="bal" aria-label="Wallet">
+  <button class="eye" id="eye" aria-label="Show or hide balance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+  <small>Available balance</small>
+  <strong id="bal">₦–</strong>
+  <div class="bal-actions"><a class="btn btn-white" href="fund.html">Add money</a><a class="btn btn-glass" href="history.html">History</a><a class="btn btn-glass" href="payments.html">Payments</a></div>
+</section>
+<div class="sec-h"><h2>Quick pay</h2></div>
+<div class="quick" id="quick"></div>
+<div class="sec-h"><h2>Recent</h2><a href="history.html">See all</a></div>
+<div id="list"></div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

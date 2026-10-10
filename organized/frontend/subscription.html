@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ByteSentry Packs – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-page="subscription">
+<main>
+<section id="subs" hidden>
+  <div class="sec-h first"><h2>Your subscriptions</h2></div>
+  <div id="subList"></div>
+</section>
+<form class="card" id="form" novalidate>
+  <div class="step"><b>1</b><h3>Choose a network and pack</h3></div>
+  <div class="packs" id="packs"><p class="empty">Loading packs…</p></div>
+  <p class="note">Each offer shows its network and price. Pay once to receive 1GB now, then confirm each remaining 1GB top-up.</p>
+  <div class="step"><b>2</b><h3>Recipient</h3></div>
+  <label class="lab" for="phone">Phone number to receive the data</label>
+    <input id="phone" class="input" type="tel" inputmode="numeric" maxlength="11" autocomplete="tel-national" placeholder="08031234567">
+    <p class="note">This number receives the first 1GB. You can review or change it before each later top-up.</p>
+  <p class="note" id="have" hidden></p>
+  <p class="err" id="err" role="alert" hidden></p>
+  <button class="btn btn-primary" id="buy" type="submit">Subscribe</button>
+</form>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

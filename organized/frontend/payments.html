@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Payments – ByteSentry</title>
+<meta name="theme-color" content="#08111F">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=payments-1">
+</head>
+<body data-page="payments">
+<main>
+  <p class="note">Payments are loaded from your account. Pending payments can be checked with Paystack; pending records cannot be deleted.</p>
+  <div id="payment-list" aria-live="polite"><p class="empty">Loading payments…</p></div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js?v=payments-1"></script>
+</body>
+</html>
