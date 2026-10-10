@@ -8,14 +8,14 @@ _LOCAL_ORIGIN = re.compile(r"http://(?:localhost|127\.0\.0\.1)(?::\d+)?")
 
 
 def payment_return_origin(origin: str | None) -> str:
-	candidate = (origin or "").rstrip("/")
-	if (
-		candidate in _ALLOWED_FRONTEND_ORIGINS
-		or _CODESPACES_ORIGIN.fullmatch(candidate)
-		or _LOCAL_ORIGIN.fullmatch(candidate)
-	):
-		return candidate
-	return FRONTEND_URL
+    candidate = (origin or "").rstrip("/")
+    if (
+        candidate in _ALLOWED_FRONTEND_ORIGINS
+        or _CODESPACES_ORIGIN.fullmatch(candidate)
+        or _LOCAL_ORIGIN.fullmatch(candidate)
+    ):
+        return candidate
+    return FRONTEND_URL
 
 
 webhook_path = "/paystack/webhook"
