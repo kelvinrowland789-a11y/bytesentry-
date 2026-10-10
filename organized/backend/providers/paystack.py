@@ -16,9 +16,9 @@ class PaystackError(RuntimeError):
 
 
 def _headers():
-    key = os.getenv("PAYSTACK_TEST_KEY", "").strip()
+    key = os.getenv("PAYSTACK_KEY", "").strip()
     if not key:
-        raise PaystackError("PAYSTACK_TEST_KEY is not configured.")
+        raise PaystackError("PAYSTACK_KEY is not configured.")
     return {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
 
 
@@ -60,7 +60,7 @@ def verify(reference: str) -> dict:
 
 
 def valid_signature(raw_body: bytes, signature: str | None) -> bool:
-    key = os.getenv("PAYSTACK_TEST_KEY", "").strip()
+    key = os.getenv("PAYSTACK_KEY", "").strip()
     if not key or not signature:
         return False
     expected = hmac.new(key.encode(), raw_body, hashlib.sha512).hexdigest()

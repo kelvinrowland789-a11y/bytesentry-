@@ -7,7 +7,7 @@
 | DATABASE_URL | your database address, includes the DB password (e.g. postgresql+psycopg2://user:PASSWORD@host:5432/db) |
 | Y3_API_KEY | Y3 data key |
 | PAIRGATE_API_KEY | Pairgate airtime key |
-| PAYSTACK_TEST_KEY | Paystack test secret key (initializes/verifies payments and validates webhook signatures) |
+| PAYSTACK_KEY | Paystack secret key (initializes/verifies payments and validates webhook signatures) |
 
 ## Not secret
 | Name | What it is |

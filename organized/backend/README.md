@@ -22,7 +22,7 @@ The migration checks and adapts empty legacy business tables to UUID user IDs. I
 business tables that already contain rows; review those IDs before migrating them.
 
 ## Secrets you need (environment variables)
-JWT_SECRET, DATABASE_URL, Y3_API_KEY, PAIRGATE_API_KEY, PAYSTACK_TEST_KEY (details in ENV_VARS.md).
+JWT_SECRET, DATABASE_URL, Y3_API_KEY, PAIRGATE_API_KEY, PAYSTACK_KEY (details in ENV_VARS.md).
 Not secret: Y3_BASE_URL, FRONTEND_URL.
 Paystack: set the webhook URL to the `webhook_url` value in `url.py` (`/paystack/webhook`).
 Wallet funding is credited only after the signed `charge.success` webhook is received and the transaction is verified
