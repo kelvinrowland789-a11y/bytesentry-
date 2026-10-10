@@ -1,5 +1,6 @@
 """App routes: wallet, data, airtime, ByteSentry subscription, Paystack."""
 import uuid
+from urllib.parse import urlencode
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
@@ -197,7 +198,12 @@ def topup(b: TopupIn, user=Depends(get_current_user), db: Session = Depends(get_
 
 # ---------- Paystack ----------
 @router.post("/fund/init")
-def fund_init(b: FundIn, user=Depends(get_current_user), db: Session = Depends(get_db)):
+def fund_init(
+    b: FundIn,
+    request: Request,
+    user=Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
     ref = "fund-" + uuid.uuid4().hex
     payment = Payment(
         user_id=user.id,
@@ -209,7 +215,10 @@ def fund_init(b: FundIn, user=Depends(get_current_user), db: Session = Depends(g
     db.add(payment)
     db.commit()
     try:
-        callback_url = f"{url.Backend_url.rstrip('/')}/fund/callback"
+        frontend_origin = url.payment_return_origin(request.headers.get("origin"))
+        callback_path = request.url_for("fund_callback")
+        callback_query = urlencode({"frontend_origin": frontend_origin})
+        callback_url = f"{callback_path}?{callback_query}"
         link = paystack.initialize(user.email, b.amount * 100, ref, callback_url)
     except paystack.PaystackError as exc:
         payment.status = "failed"
@@ -296,9 +305,10 @@ def settle(db: Session, reference: str) -> bool:
 
 
 @router.get("/fund/callback")
-def fund_callback():
+def fund_callback(frontend_origin: str | None = None):
     """Return the customer to the funding page; payment confirmation comes from settlement."""
-    return RedirectResponse(f"{url.frontend_url.rstrip('/')}/fund.html?status=pending")
+    origin = url.payment_return_origin(frontend_origin)
+    return RedirectResponse(f"{origin}/fund.html?status=pending")
 
 
 def _settle_paystack_webhook(reference: str) -> bool:
