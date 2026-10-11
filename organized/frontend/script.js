@@ -38,20 +38,20 @@ import { url } from "./url.js";
 
   const DATA = {
     validityDays: 30,
-    exampleSaving: 1000, // 10GB: ≈₦4,500 vs ₦3,500
+    exampleSaving: 1500, // 10GB: ≈₦4,500 vs ₦3,000
     plans: {
       // `normal` = typical price; set it only where you can stand behind it.
       mtn: [
-        { size: "1GB",  price: 400 },
-        { size: "3GB",  price: 1100 },
+        { size: "1GB",  price: 310 },
+        { size: "3GB",  price: 930 },
         { size: "5GB",  price: 1800 },
-        { size: "10GB", price: 3500, normal: 4500, tag: "Best value" },
+        { size: "10GB", price: 3000, normal: 4500, tag: "Best value" },
       ],
       airtel: [
-        { size: "1GB",  price: 400 },
-        { size: "3GB",  price: 1100 },
+        { size: "1GB",  price: 310 },
+        { size: "3GB",  price: 930 },
         { size: "5GB",  price: 1800 },
-        { size: "10GB", price: 3500, normal: 4500, tag: "Best value" },
+        { size: "10GB", price: 3000, normal: 4500, tag: "Best value" },
       ],
     },
   };
