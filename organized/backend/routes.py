@@ -242,7 +242,7 @@ def settle(db: Session, reference: str) -> bool:
     if (
         d.get("status") == "success"
         and d.get("reference") == reference
-        and d.get("amount") == pay.amount_naira * 100
+        and (d.get("amount") or 0) >= pay.amount_naira * 100
         and d.get("currency") == "NGN"
         and customer_email == (pay.email or "").lower()
     ):
